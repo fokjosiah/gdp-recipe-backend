@@ -1,20 +1,18 @@
 from fastapi import FastAPI
-from enum import Enum
-from pydantic import BaseModel
-
-class fruits(str, Enum):
-    apple = "apple"
-    pear = "pear"
-    banana = "banana"
-
-class Item(BaseModel):
-    name: str
-    price: float
+from models import recipeList, CreateRecipe, Recipe
 
 app = FastAPI()
 
-@app.get("/")
-def testGet():
-    return "We are live!"
+@app.post("/recipe")
+async def addRecipe(recipe: CreateRecipe):
+    # create a new recipe instance
+    new_recipe = Recipe(
+        # find the most recent id
+        id = recipeList[-1].id + 1 if recipeList[-1].id else 0,
+        **recipe.model_dump()
+    )
+    # add to recipeList and return
+    recipeList.append(new_recipe)
+    return recipeList
 
 
