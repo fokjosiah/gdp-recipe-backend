@@ -15,6 +15,6 @@ app = FastAPI()
 
 @app.get("/")
 def testGet():
-    return "HIIIII"
+    return "We are live!"
 
 
