@@ -66,10 +66,10 @@ USER ${USER_NAME}
 RUN pip3 install .[test,dev]
 
 ## Expose port and run app
-EXPOSE 8080
+EXPOSE 8000
 
 #for uvicorn (FastAPI)
-CMD [ "sh", "-c", "fastapi run src/main.py --port 8080 --workers 4 --host 0.0.0.0 --reload"]
+CMD [ "sh", "-c", "fastapi run src/main.py --port 8000 --workers 4 --host 0.0.0.0"]
 
 # for gunicorn (eg. Flask)
 # CMD [ "sh", "-c", "GUNICORN_CMD_ARGS='--bind=0.0.0.0:8080 --workers=8' gunicorn 'src/python_template/main.py'" ]
