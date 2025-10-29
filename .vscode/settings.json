@@ -17,5 +17,7 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
-    "python.REPL.enableREPLSmartSend": false
+    "python.REPL.enableREPLSmartSend": false,
+    "workbench.colorTheme": "fb25d871-4a7c-49f5-9426-1f7eb00c2699"
+    //"workbench.colorTheme": "Woodfish Dark",
 }
