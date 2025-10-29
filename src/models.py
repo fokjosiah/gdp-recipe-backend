@@ -15,6 +15,7 @@ class CreateRecipe(BaseModel):
     instructions: str
     prep_time_mins: Optional[int] = None
     difficulty: Optional[RecipeDifficulty] = None
+    favorite: bool
 
 
 class Recipe(CreateRecipe):

@@ -18,7 +18,7 @@ app.add_middleware(
     allow_headers=["*"],            # allow all headers
 )
 
-@app.post("/recipe")
+@app.post("/recipes")
 async def addRecipe(recipe: CreateRecipe):
     # create a new recipe instance
     new_recipe = Recipe(
@@ -36,7 +36,7 @@ async def getAllRecipes():
     return recipeList
 
 
-@app.get("/recipe/:id")
+@app.get("/recipes/:id")
 async def getRecipeById(id: int):
     for recipe in recipeList:
         if recipe.id == id:
@@ -45,18 +45,18 @@ async def getRecipeById(id: int):
     return "Recipe with " + str(id) + " not found!"
 
 
-@app.put("/recipe/:id")
+@app.put("/recipes/:id")
 async def updateRecipeById(id: int, updatedRecipe: CreateRecipe):
     for i in range(len(recipeList)):
         # id matches the incoming request id
         if recipeList[i].id == id:
             # update that entry to the updated recipe while keeping the old id
             recipeList[i] = Recipe(id=id, **updatedRecipe.model_dump())
-            return updatedRecipe
+            return recipeList
     # if there was no recipe that existed with the specified id let the client know
     return "No recipe with id " + str(id) + " found. No update perfomed."
 
-@app.delete("/recipe/:id")
+@app.delete("/recipes/:id")
 async def deleteRecipeById(id: int):
     for recipe in recipeList:
         if recipe.id == id:

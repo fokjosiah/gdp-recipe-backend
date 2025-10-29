@@ -22,7 +22,8 @@ recipeList: List[Recipe] = [
             "Season with black pepper and serve immediately."
         ),
         prep_time_mins=25,
-        difficulty=RecipeDifficulty.medium
+        difficulty=RecipeDifficulty.medium,
+        favorite=0
     ),
     Recipe(
         id=10,
@@ -43,7 +44,8 @@ recipeList: List[Recipe] = [
             "Add tofu back, drizzle with soy sauce, and toss to coat evenly. Serve over rice or noodles."
         ),
         prep_time_mins=30,
-        difficulty=RecipeDifficulty.easy
+        difficulty=RecipeDifficulty.easy,
+        favorite=0
     ),
     Recipe(
         id=11,
@@ -66,7 +68,8 @@ recipeList: List[Recipe] = [
             "Remove bay leaves, season to taste, and serve with crusty bread."
         ),
         prep_time_mins=180,
-        difficulty=RecipeDifficulty.hard
+        difficulty=RecipeDifficulty.hard,
+        favorite=0
     ),
     Recipe(
         id=12,
@@ -86,7 +89,8 @@ recipeList: List[Recipe] = [
             "Cook until golden brown on both sides. Serve warm with syrup or berries."
         ),
         prep_time_mins=20,
-        difficulty=RecipeDifficulty.easy
+        difficulty=RecipeDifficulty.easy,
+        favorite=0
     ),
     Recipe(
         id=13,
@@ -108,7 +112,8 @@ recipeList: List[Recipe] = [
             "Add vegetables and cook until tender. Season with fish sauce and sugar. Stir in basil and lime leaves before serving with jasmine rice."
         ),
         prep_time_mins=40,
-        difficulty=RecipeDifficulty.medium
+        difficulty=RecipeDifficulty.medium,
+        favorite=0
     ),
     Recipe(
         id=14,
@@ -129,7 +134,8 @@ recipeList: List[Recipe] = [
             "Garnish with parsley and serve immediately."
         ),
         prep_time_mins=25,
-        difficulty=RecipeDifficulty.medium
+        difficulty=RecipeDifficulty.medium,
+        favorite=0
     ),
     Recipe(
         id=15,
@@ -149,7 +155,8 @@ recipeList: List[Recipe] = [
             "Serve with toasted bread or croutons."
         ),
         prep_time_mins=45,
-        difficulty=RecipeDifficulty.easy
+        difficulty=RecipeDifficulty.easy,
+        favorite=0
     ),
     Recipe(
         id=16,
@@ -169,7 +176,8 @@ recipeList: List[Recipe] = [
             "cucumber, and avocado along one edge. Roll tightly, slice into pieces, and serve with soy sauce and wasabi."
         ),
         prep_time_mins=60,
-        difficulty=RecipeDifficulty.hard
+        difficulty=RecipeDifficulty.hard,
+        favorite=0
     ),
     Recipe(
         id=17,
@@ -189,7 +197,8 @@ recipeList: List[Recipe] = [
             "Bake until bubbling and golden. Garnish with fresh basil before serving."
         ),
         prep_time_mins=70,
-        difficulty=RecipeDifficulty.medium
+        difficulty=RecipeDifficulty.medium,
+        favorite=0
     ),
     Recipe(
         id=18,
@@ -212,7 +221,8 @@ recipeList: List[Recipe] = [
             "then top with shredded lettuce, cheese, and a dollop of sour cream."
         ),
         prep_time_mins=30,
-        difficulty=RecipeDifficulty.easy
+        difficulty=RecipeDifficulty.easy,
+        favorite=0
     ),
     Recipe(
         id=19,
@@ -233,6 +243,7 @@ recipeList: List[Recipe] = [
             "until the rice is creamy and cooked through. Finish with butter and parmesan cheese before serving."
         ),
         prep_time_mins=50,
-        difficulty=RecipeDifficulty.hard
+        difficulty=RecipeDifficulty.hard,
+        favorite=0
     )
 ]
