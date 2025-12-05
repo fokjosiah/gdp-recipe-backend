@@ -3,6 +3,7 @@ FROM registry.access.redhat.com/ubi9/ubi:latest AS base
 ARG USER_ID=1001
 ARG GROUP_ID=1001
 ENV USER_NAME=default
+ENV PORT=${HOST_PORT}
 
 ENV HOME="/home/${USER_NAME}"
 ENV PATH="${HOME}/.local/bin:${PATH}"
@@ -41,9 +42,7 @@ RUN chmod +x /tmp/devtools.sh && /tmp/devtools.sh
 
 USER ${USER_NAME}
 WORKDIR ${HOME}
-COPY . .
-RUN pip3 install -r requirements.txt
-
+# EXPOSE ${PORT}
 # DEPLOYMENT EXAMPLE:
 #-----------------------------
 
@@ -66,10 +65,11 @@ USER ${USER_NAME}
 RUN pip3 install .[test,dev]
 
 ## Expose port and run app
-EXPOSE 8080
+EXPOSE ${PORT}
 
 #for uvicorn (FastAPI)
-CMD [ "sh", "-c", "fastapi run src/main.py --port 8080 --workers 4 --host 0.0.0.0 --reload"]
+# CMD [ "sh", "-c", "fastapi run src/main.py --port 8000 --workers 4 --host 0.0.0.0"]
+CMD sh -c fastapi run src/main.py --port ${PORT} --host 0.0.0.0
 
 # for gunicorn (eg. Flask)
 # CMD [ "sh", "-c", "GUNICORN_CMD_ARGS='--bind=0.0.0.0:8080 --workers=8' gunicorn 'src/python_template/main.py'" ]
