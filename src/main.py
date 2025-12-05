@@ -2,12 +2,11 @@ from fastapi import FastAPI
 from models import CreateRecipe, Recipe
 from database import recipeList
 from fastapi.middleware.cors import CORSMiddleware
-
+import os
 app = FastAPI()
- 
+
 origins = [
-    "http://localhost:4200",  # your local frontend
-    "http://frontend:3000",   # if it's running in another container
+    os.getenv("FRONTEND_ADDRESS", "http://localhost:4200"),  # your local frontend
 ]
 
 app.add_middleware(

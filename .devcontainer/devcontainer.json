@@ -16,8 +16,9 @@
 
 	//may be needed for Podman
 	"runArgs": [
-		"--userns=keep-id",
-		"--pid=host"
+		"--env-file=.env",
+		"--network-alias=recipe-backend",
+		"--network=dev-network"
 		//"--device=nvidia.com/gpu=all" // may need this for Nvidia GPU passthrough
 		//"--device=/dev/kfd", "--device=/dev/dri", "--security-opt=no-new-privileges", "--cap-drop=ALL" // may need this for AMD GPU passthrough
 	],
@@ -59,5 +60,6 @@
 		  }
 		}
 	  }	 ,
-	  "forwardPorts": [8000] 
+	//   "forwardPorts": [8000],
+	  "postCreateCommand": "pip3 install -r requirements.txt"
 }
